@@ -16,6 +16,18 @@ const CATALOG = [
             ua: 'Деталізоване настінне панно із зображенням класичного герба Харкова — ріг достатку та кадуцей. Стилізація під рустикове дерево та метал.',
             en: 'Detailed wall panel featuring the classic Kharkiv coat of arms — cornucopia and caduceus. Styled with rustic wood and metal textures.'
         }
+    },
+    {
+        id: 'cats-family',
+        category: 'animals',
+        img: '/assets/images/cats_family_3d_close.png',
+        size: '300x300 mm',
+        finish: 'Matte / Silk',
+        title: { ua: 'Сім\'я Котів', en: 'Cat Family' },
+        desc: {
+            ua: 'Затишне настінне панно із зображенням сім\'ї котів, що сплелися хвостами. Уособлює домашнє вогнище та любов.',
+            en: 'Cozy wall panel depicting an intertwined cat family. A symbol of home warmth and love.'
+        }
     }
     // --- Add more panels here ---
     // {
