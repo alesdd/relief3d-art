@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title lang-ua>Каталог — Relief3D</title>
+    <meta name="description" content="Каталог 3D настінних панно. 3D wall art catalog.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/shared.css">
+</head>
+<body>
+    <div class="ambient-glow"></div>
+    <header class="site-header" id="site-header"></header>
+
+    <div class="page-content">
+        <section style="padding: 4rem 5% 2rem;">
+            <div class="breadcrumbs">
+                <a href="../index.html" class="lang-ua">Головна</a>
+                <a href="../index.html" class="lang-en">Home</a>
+                <span class="sep">›</span>
+                <span class="lang-ua">Каталог</span>
+                <span class="lang-en">Catalog</span>
+            </div>
+            <h1 style="font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; letter-spacing: -0.03em; margin-bottom: 0.5rem;">
+                <span class="lang-ua">Каталог</span>
+                <span class="lang-en">Catalog</span>
+            </h1>
+            <p style="color: var(--text-secondary); font-size: 1rem; margin-bottom: 2rem;">
+                <span class="lang-ua">Усі роботи</span>
+                <span class="lang-en">All works</span>
+            </p>
+        </section>
+
+        <!-- Filter Bar -->
+        <div class="filter-bar" id="filter-bar">
+            <button class="filter-btn active" data-cat="" onclick="applyFilter(this)">
+                <span class="lang-ua">Усі</span><span class="lang-en">All</span>
+            </button>
+            <button class="filter-btn" data-cat="heraldry" onclick="applyFilter(this)">
+                🏛️ <span class="lang-ua">Геральдика</span><span class="lang-en">Heraldry</span>
+            </button>
+            <button class="filter-btn" data-cat="animals" onclick="applyFilter(this)">
+                🐱 <span class="lang-ua">Тварини</span><span class="lang-en">Animals</span>
+            </button>
+            <button class="filter-btn" data-cat="japan" onclick="applyFilter(this)">
+                ⛩️ <span class="lang-ua">Японія</span><span class="lang-en">Japan</span>
+            </button>
+            <button class="filter-btn" data-cat="gaming" onclick="applyFilter(this)">
+                🎮 <span class="lang-ua">Геймінг</span><span class="lang-en">Gaming</span>
+            </button>
+        </div>
+
+        <div class="portfolio-grid" id="catalog-grid"></div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="lang-switcher">
+            <button class="lang-btn" data-lang="ua" onclick="setLanguage('ua')">UA</button>
+            <button class="lang-btn" data-lang="en" onclick="setLanguage('en')">EN</button>
+        </div>
+        <p>&copy; 2026 Relief3D.Art.</p>
+    </footer>
+
+    <script src="../assets/js/catalog.js"></script>
+    <script src="../assets/js/site.js"></script>
+    <script>
+        buildHeader('catalog');
+
+        function applyFilter(btn) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            renderCatalog('catalog-grid', btn.dataset.cat || null, getLang());
+            applyLanguage(getLang());
+        }
+
+        document.getElementById('catalog-grid').addEventListener('mousemove', e => {
+            for (const card of document.getElementsByClassName('card')) {
+                const rect = card.getBoundingClientRect();
+                card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+                card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+            }
+        });
+
+        renderCatalog('catalog-grid', null, getLang());
+    </script>
+</body>
+</html>
