@@ -28,6 +28,18 @@ const CATALOG = [
             ua: 'Затишне настінне панно із зображенням сім\'ї котів, що сплелися хвостами. Уособлює домашнє вогнище та любов.',
             en: 'Cozy wall panel depicting an intertwined cat family. A symbol of home warmth and love.'
         }
+    },
+    {
+        id: 'bond-wednesday',
+        category: 'gaming',
+        img: '/assets/images/bond_wednesday_vector_close.png',
+        size: '400x200 mm',
+        finish: 'Matte Black',
+        title: { ua: 'Бонд та Венздей', en: 'Bond & Wednesday' },
+        desc: {
+            ua: 'Кінематографічний 3D-кросовер силуетів Агента 007 та Венздей біля Aston Martin. Оптимізований для легкого CAD моделювання.',
+            en: 'Cinematic 3D crossover silhouettes of Agent 007 and Wednesday next to the Aston Martin. Optimized for easy CAD modeling.'
+        }
     }
     // --- Add more panels here ---
     // {
