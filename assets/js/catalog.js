@@ -7,7 +7,7 @@ const CATALOG = [
     {
         "id": "kharkiv-coat-of-arms",
         "category": "heraldry",
-        "img": "/assets/images/kharkiv_shield_concept.png",
+        "img": "/assets/images/kharkiv_3d_close.png",
         "size": "350 x 400 мм (базовий)",
         "finish": "PLA / PETG (Деревна текстура + металік)",
         "title": {
@@ -129,8 +129,14 @@ const MATERIALS = {
 };
 
 function getRootPath() {
-    const depth = window.location.pathname.replace(/^\/|\/$/g, '').split('/').filter(Boolean).length;
-    return depth === 0 ? '.' : '../'.repeat(depth);
+    const path = window.location.pathname;
+    if (path.includes('/product/') || path.includes('/category/')) {
+        return '../..';
+    }
+    if (path.includes('/catalog/')) {
+        return '..';
+    }
+    return '.';
 }
 
 function buildCard(item, lang) {

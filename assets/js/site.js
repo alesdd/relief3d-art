@@ -212,16 +212,60 @@ function initProductPage() {
             badges.forEach(b => b.classList.remove('active'));
             badge.classList.add('active');
             const matKey = badge.dataset.material;
-            img.src = root + MATERIALS[matKey].img;
+            // Clean up leading slash from path to make it relative and safe locally/on subpaths
+            const cleanPath = MATERIALS[matKey].img.replace(/^\//, '');
+            img.src = root + '/' + cleanPath;
         });
         
         if (idx === 0) {
             badge.classList.add('active');
-            img.src = root + MATERIALS[badge.dataset.material].img;
+            const cleanPath = MATERIALS[badge.dataset.material].img.replace(/^\//, '');
+            img.src = root + '/' + cleanPath;
         }
     });
     
     applyLanguage(lang);
+}
+
+// --- Image Slider/Carousel ---
+function initCarousels() {
+    document.querySelectorAll('.carousel-container').forEach(container => {
+        const slides = container.querySelectorAll('.carousel-slides img');
+        const dotsContainer = container.querySelector('.carousel-dots');
+        const prevBtn = container.querySelector('.prev-btn');
+        const nextBtn = container.querySelector('.next-btn');
+        if (slides.length <= 1) return;
+        
+        let activeIdx = 0;
+        
+        if (dotsContainer) {
+            dotsContainer.innerHTML = Array.from(slides).map((_, idx) => 
+                `<span class="dot ${idx === 0 ? 'active' : ''}" data-idx="${idx}"></span>`
+            ).join('');
+        }
+        
+        const dots = container.querySelectorAll('.carousel-dots .dot');
+        
+        function showSlide(idx) {
+            slides[activeIdx].classList.remove('active');
+            if (dots.length) dots[activeIdx].classList.remove('active');
+            
+            activeIdx = (idx + slides.length) % slides.length;
+            
+            slides[activeIdx].classList.add('active');
+            if (dots.length) dots[activeIdx].classList.add('active');
+        }
+        
+        if (prevBtn) prevBtn.addEventListener('click', (e) => { e.stopPropagation(); showSlide(activeIdx - 1); });
+        if (nextBtn) nextBtn.addEventListener('click', (e) => { e.stopPropagation(); showSlide(activeIdx + 1); });
+        
+        dots.forEach(dot => {
+            dot.addEventListener('click', (e) => {
+                e.stopPropagation();
+                showSlide(parseInt(dot.dataset.idx));
+            });
+        });
+    });
 }
 
 document.addEventListener('keydown', e => { 
@@ -235,10 +279,11 @@ document.addEventListener('keydown', e => {
     }
 });
 
-// Apply lang, lightbox and product page init on DOMContentLoaded
+// Apply lang, lightbox, carousels and product page init on DOMContentLoaded
 document.addEventListener('DOMContentLoaded', () => {
     applyLanguage(getLang());
     initLightbox();
+    initCarousels();
     initProductPage();
     
     // Global optimized mouse glow effect for card hover (avoids layout thrashing)

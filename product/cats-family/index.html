@@ -17,8 +17,8 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../assets/css/shared.css?v=4.0">
-    <link rel="stylesheet" href="../../assets/css/product.css?v=4.0">
+    <link rel="stylesheet" href="../../assets/css/shared.css?v=5.0">
+    <link rel="stylesheet" href="../../assets/css/product.css?v=5.0">
 </head>
 <body>
 
@@ -27,7 +27,7 @@
     <main class="product-page">
         <div class="bento-grid">
             
-            <!-- Hero Card -->
+            <!-- Hero Card with Carousel -->
             <div class="bento-card card-hero">
                 <div class="bento-content">
                     <div class="breadcrumbs">
@@ -41,8 +41,16 @@
                         <span class="lang-en">Cozy wall panel depicting an intertwined cat family. A perfect symbol of home warmth, love, and care. Made from eco-friendly bio-plastic.</span>
                     </p>
                 </div>
-                <div class="bento-img-wrapper">
-                    <img src="../../assets/images/cats_family_3d_close.png" class="zoomable" alt="Cat Family">
+                <div class="bento-img-wrapper carousel-container">
+                    <div class="carousel-slides">
+                        <img src="../../assets/images/cats_family_3d_close.png" class="zoomable active" alt="Slide 1">
+<img src="../../assets/images/cats_family_cozy_mockup.png" class="zoomable " alt="Slide 2">
+<img src="../../assets/images/cats_family_colored.png" class="zoomable " alt="Slide 3">
+
+                    </div>
+                    <button class="carousel-btn prev-btn">‹</button>
+                    <button class="carousel-btn next-btn">›</button>
+                    <div class="carousel-dots"></div>
                 </div>
             </div>
 
@@ -59,20 +67,50 @@
                 <div class="bento-content">
                     <h2><span class="lang-ua">Палітра Матеріалів</span><span class="lang-en">Material Palette</span></h2>
                     <p>
-                        <span class="lang-ua">Обирайте матеріали для отримання унікальних металевих, матових чи дерев'яних текстур.</span>
-                        <span class="lang-en">Select materials to get unique metallic, matte, or wood-filled textures.</span>
+                        <span class="lang-ua">Натискайте на матеріали, щоб побачити відповідну катушку нитки пластику для друку.</span>
+                        <span class="lang-en">Click on materials to see the corresponding spool of filament.</span>
                     </p>
                     <div class="materials-row"></div>
                 </div>
-                <div class="bento-img-wrapper" style="min-height: 150px;">
+                <div class="bento-img-wrapper" style="min-height: 250px;">
                     <img src="../../assets/images/filament_spools.png" alt="Filaments">
+                </div>
+            </div>
+
+            <!-- SEO & FAQ Card -->
+            <div class="bento-card card-seo">
+                <div class="bento-content">
+                    <h2 style="font-size: 2rem; margin-bottom: 24px;"><span class="lang-ua">Детальніше про виріб (FAQ)</span><span class="lang-en">Product Details (FAQ)</span></h2>
+                    <div class="seo-grid">
+                        <div class="seo-item">
+                            <h3><span class="lang-ua">Матеріали</span><span class="lang-en">Materials</span></h3>
+                            <p>
+                                <span class="lang-ua">Ми використовуємо PLA та PETG філаменти. Вони міцні, довговічні та безпечні для інтер'єру.</span>
+                                <span class="lang-en">We use PLA and PETG filaments. They are durable, safe, and perfect for indoor decor.</span>
+                            </p>
+                        </div>
+                        <div class="seo-item">
+                            <h3><span class="lang-ua">Особливості</span><span class="lang-en">Features</span></h3>
+                            <p>
+                                <span class="lang-ua">Наші панно мають унікальний горизонтальний рельєф 3D-друку, що грає тінями при боковому світлі.</span>
+                                <span class="lang-en">Our panels feature a unique horizontal FDM texture that creates depth with shadows.</span>
+                            </p>
+                        </div>
+                        <div class="seo-item">
+                            <h3><span class="lang-ua">Індивідуальність</span><span class="lang-en">Customization</span></h3>
+                            <p>
+                                <span class="lang-ua">Ви можете обрати будь-який колір пластику з нашої палітри для найкращого поєднання з вашою стіною.</span>
+                                <span class="lang-en">You can pick any filament color from our palette to best match your wall.</span>
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <!-- CTA Card -->
             <div class="bento-card card-cta">
                 <div class="bento-content">
-                    <h2><span class="lang-ua">Готові замовити?</span><span class="lang-en">Ready to order?</span></h2>
+                    <h2><span class="lang-ua">Бажаєте замовити панно?</span><span class="lang-en">Want to order?</span></h2>
                     <p>
                         <span class="lang-ua">Зв'яжіться для обговорення кольору, розмірів та доставки.</span>
                         <span class="lang-en">Contact us to discuss color, sizing, and shipping.</span>
@@ -91,8 +129,8 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="../../assets/js/catalog.js?v=4.0"></script>
-    <script src="../../assets/js/site.js?v=4.0"></script>
+    <script src="../../assets/js/catalog.js?v=5.0"></script>
+    <script src="../../assets/js/site.js?v=5.0"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             buildHeader(''); 
