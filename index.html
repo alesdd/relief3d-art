@@ -34,6 +34,10 @@
             overflow-x: hidden;
         }
 
+        /* Language Toggle Logic */
+        body.lang-en .lang-ua { display: none !important; }
+        body.lang-ua .lang-en { display: none !important; }
+
         /* Ambient Glow Background */
         .ambient-bg {
             position: fixed;
@@ -112,6 +116,8 @@
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             cursor: pointer;
             backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
         }
 
         .card:hover {
@@ -136,6 +142,9 @@
         .card-content {
             padding: 1.5rem;
             position: relative;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .card-title {
@@ -148,22 +157,27 @@
             color: var(--text-muted);
             font-size: 0.95rem;
             margin-bottom: 1rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
+            flex-grow: 1;
         }
 
-        .lang-badge {
-            display: inline-block;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            padding: 2px 6px;
+        .view-btn {
+            margin-top: 1rem;
+            width: 100%;
+            padding: 10px;
+            background: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .card:hover .view-btn {
             background: var(--accent-gold);
             color: #000;
-            border-radius: 4px;
-            font-weight: 800;
-            margin-right: 8px;
+            border-color: var(--accent-gold);
         }
 
         .specs {
@@ -182,6 +196,42 @@
             border-top: 1px solid var(--glass-border);
             color: var(--text-muted);
             margin-top: 4rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .footer-text {
+            max-width: 600px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .lang-switcher {
+            display: flex;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.05);
+            padding: 5px;
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+        }
+
+        .lang-btn {
+            background: transparent;
+            color: var(--text-muted);
+            border: none;
+            padding: 5px 15px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .lang-btn.active {
+            background: var(--accent-gold);
+            color: #000;
         }
 
         /* Modal Styles */
@@ -300,19 +350,25 @@
         }
     </style>
 </head>
-<body>
+<body class="lang-ua">
     <div class="ambient-bg"></div>
     
     <header>
         <a href="#" class="logo">Relief3D</a>
         <nav>
-            <!-- Navigation can go here -->
+            <div class="lang-switcher">
+                <button class="lang-btn active" onclick="setLanguage('ua')" id="btn-ua">UA</button>
+                <button class="lang-btn" onclick="setLanguage('en')" id="btn-en">EN</button>
+            </div>
         </nav>
     </header>
 
     <section class="hero">
-        <h1>Мистецтво у 3D <br><span style="color: var(--accent-gold); font-family: 'Playfair Display', serif;">Art in 3D</span></h1>
-        <p>Ексклюзивні настінні панно. Поєднання класичної геральдики, сучасного дизайну та передових технологій 3D-друку.</p>
+        <h1 class="lang-ua">Мистецтво у 3D</h1>
+        <h1 class="lang-en" style="font-family: 'Playfair Display', serif; color: var(--accent-gold);">Art in 3D</h1>
+        
+        <p class="lang-ua">Ексклюзивні настінні панно. Поєднання класичної геральдики, сучасного дизайну та передових технологій 3D-друку.</p>
+        <p class="lang-en">Exclusive wall panels. A blend of classical heraldry, modern design, and advanced 3D printing technology.</p>
     </section>
 
     <main class="portfolio-grid">
@@ -320,15 +376,19 @@
         <article class="card" onclick="openModal(this)">
             <img src="assets/images/kharkiv_shield_concept.png" alt="Герб Харкова - Настінне панно" class="card-img">
             <div class="card-content">
-                <h2 class="card-title">Герб Харкова<br><span style="font-size: 1.1rem; color: var(--text-muted);">Kharkiv Coat of Arms</span></h2>
+                <h2 class="card-title lang-ua">Герб Харкова</h2>
+                <h2 class="card-title lang-en">Kharkiv Coat of Arms</h2>
+                
                 <div class="card-desc">
-                    <p><span class="lang-badge">UA</span> Деталізоване настінне панно із зображенням класичного герба Харкова (ріг достатку та кадуцей). Стилізація під рустикове дерево та метал.</p>
-                    <p><span class="lang-badge">EN</span> Detailed wall panel featuring the classic Kharkiv coat of arms (cornucopia and caduceus). Styled with rustic wood and metal textures.</p>
+                    <p class="lang-ua">Деталізоване настінне панно із зображенням класичного герба Харкова (ріг достатку та кадуцей). Стилізація під рустикове дерево та метал.</p>
+                    <p class="lang-en">Detailed wall panel featuring the classic Kharkiv coat of arms (cornucopia and caduceus). Styled with rustic wood and metal textures.</p>
                 </div>
                 <div class="specs">
                     <span>📐 350x400 mm</span>
                     <span>🎨 Custom Finish</span>
                 </div>
+                <button class="view-btn lang-ua">Детальніше</button>
+                <button class="view-btn lang-en">View Details</button>
             </div>
         </article>
         
@@ -336,7 +396,19 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 Relief3D.Art. Всі права захищені.</p>
+        <div class="lang-switcher">
+            <button class="lang-btn active" onclick="setLanguage('ua')" id="btn-footer-ua">UA</button>
+            <button class="lang-btn" onclick="setLanguage('en')" id="btn-footer-en">EN</button>
+        </div>
+        <div class="footer-text lang-ua">
+            Ми створюємо унікальні об'ємні настінні панно, герби та барельєфи на замовлення. 
+            Кожен виріб розробляється з індивідуальним підходом та виготовляється за допомогою сучасних технологій.
+        </div>
+        <div class="footer-text lang-en">
+            We create unique 3D wall panels, coats of arms, and bas-reliefs on demand. 
+            Each piece is custom-designed and manufactured using modern 3D technology.
+        </div>
+        <p>&copy; 2026 Relief3D.Art.</p>
     </footer>
 
     <!-- Modal -->
@@ -347,33 +419,67 @@
                 <img id="modalImg" src="" alt="" class="modal-img">
             </div>
             <div class="modal-info">
-                <h2 id="modalTitle" class="card-title" style="margin-bottom: 1.5rem;"></h2>
-                <div id="modalDesc" class="card-desc" style="margin-bottom: 2rem;"></div>
-                <div id="modalSpecs" class="specs" style="margin-bottom: 2rem;"></div>
-                <a href="#" class="order-btn" onclick="alert('У майбутньому тут буде форма замовлення або лінк на Telegram!'); return false;">Замовити / Order</a>
+                <!-- Data will be populated by JS -->
+                <div id="modalContentTarget"></div>
             </div>
         </div>
     </div>
 
     <script>
+        // Language Auto-Detection and Switching Logic
+        function setLanguage(lang) {
+            document.body.className = 'lang-' + lang;
+            
+            // Update buttons in header and footer
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            if(document.getElementById('btn-' + lang)) document.getElementById('btn-' + lang).classList.add('active');
+            if(document.getElementById('btn-footer-' + lang)) document.getElementById('btn-footer-' + lang).classList.add('active');
+            
+            // Save preference
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        // Auto-detect on load
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferredLanguage');
+            if (savedLang) {
+                setLanguage(savedLang);
+            } else {
+                // Check browser language
+                const userLang = navigator.language || navigator.userLanguage; 
+                if (userLang.toLowerCase().includes('uk') || userLang.toLowerCase().includes('ru')) {
+                    setLanguage('ua');
+                } else {
+                    setLanguage('en');
+                }
+            }
+        });
+
+        // Modal Logic
         const modal = document.getElementById('itemModal');
         const modalImg = document.getElementById('modalImg');
-        const modalTitle = document.getElementById('modalTitle');
-        const modalDesc = document.getElementById('modalDesc');
-        const modalSpecs = document.getElementById('modalSpecs');
+        const modalContentTarget = document.getElementById('modalContentTarget');
 
         function openModal(cardElement) {
             // Get data from the clicked card
             const imgSrc = cardElement.querySelector('.card-img').src;
-            const titleHtml = cardElement.querySelector('.card-title').innerHTML;
-            const descHtml = cardElement.querySelector('.card-desc').innerHTML;
-            const specsHtml = cardElement.querySelector('.specs').innerHTML;
+            
+            // Extract the HTML content we need (Title, Desc, Specs, without the view-btn)
+            const titleHtml = cardElement.querySelector('.card-title.lang-ua').outerHTML + cardElement.querySelector('.card-title.lang-en').outerHTML;
+            const descHtml = cardElement.querySelector('.card-desc').outerHTML;
+            const specsHtml = cardElement.querySelector('.specs').outerHTML;
+            
+            // Order button
+            const orderBtnUa = '<a href="#" class="order-btn lang-ua" onclick="alert(\'У майбутньому тут буде форма замовлення або лінк на Telegram!\'); return false;">Замовити</a>';
+            const orderBtnEn = '<a href="#" class="order-btn lang-en" onclick="alert(\'Order form or Telegram link will be here!\'); return false;">Order Now</a>';
 
             // Populate modal
             modalImg.src = imgSrc;
-            modalTitle.innerHTML = titleHtml;
-            modalDesc.innerHTML = descHtml;
-            modalSpecs.innerHTML = specsHtml;
+            modalContentTarget.innerHTML = 
+                `<div style="margin-bottom: 1.5rem;">${titleHtml}</div>` + 
+                `<div style="margin-bottom: 2rem;">${descHtml}</div>` + 
+                `<div style="margin-bottom: 2rem;">${specsHtml}</div>` + 
+                `<div style="margin-top: auto;">${orderBtnUa}${orderBtnEn}</div>`;
 
             // Show modal
             modal.classList.add('show');
