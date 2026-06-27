@@ -63,17 +63,10 @@
         <p>&copy; 2026 Relief3D.Art.</p>
     </footer>
 
-    <script src="../../assets/js/catalog.js"></script>
-    <script src="../../assets/js/site.js"></script>
+    <script src="../../assets/js/catalog.js?v=3.0"></script>
+    <script src="../../assets/js/site.js?v=3.0"></script>
     <script>
         buildHeader('catalog');
-        document.getElementById('portfolio').addEventListener('mousemove', e => {
-            for (const card of document.getElementsByClassName('card')) {
-                const rect = card.getBoundingClientRect();
-                card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
-                card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
-            }
-        });
         renderCatalog('portfolio', 'animals', getLang());
     </script>
 </body>

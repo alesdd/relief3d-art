@@ -189,4 +189,14 @@ document.addEventListener('keydown', e => {
 document.addEventListener('DOMContentLoaded', () => {
     applyLanguage(getLang());
     initLightbox();
+    
+    // Global optimized mouse glow effect for card hover (avoids layout thrashing)
+    document.addEventListener('mousemove', e => {
+        const card = e.target.closest('.card');
+        if (card) {
+            const rect = card.getBoundingClientRect();
+            card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+            card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+        }
+    });
 });
