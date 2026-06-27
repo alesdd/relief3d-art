@@ -1,59 +1,71 @@
 // ==============================================
 // Relief3D — Catalog Data (Single Source of Truth)
 // ==============================================
-// To add a new panel, just add an entry here.
-// Category slugs: 'heraldry', 'animals', 'japan', 'gaming'
+// Automatically generated from Exobrain panels_db.json. Do not edit directly.
 
 const CATALOG = [
     {
-        id: 'kharkiv-coat-of-arms',
-        category: 'heraldry',
-        img: '/assets/images/kharkiv_shield_concept.png',
-        size: '350x400 mm',
-        finish: 'Custom',
-        title: { ua: 'Герб Харкова', en: 'Kharkiv Coat of Arms' },
-        desc: {
-            ua: 'Деталізоване настінне панно із зображенням класичного герба Харкова — ріг достатку та кадуцей. Стилізація під рустикове дерево та метал.',
-            en: 'Detailed wall panel featuring the classic Kharkiv coat of arms — cornucopia and caduceus. Styled with rustic wood and metal textures.'
-        }
+        "id": "kharkiv-coat-of-arms",
+        "category": "heraldry",
+        "img": "/assets/images/kharkiv_shield_concept.png",
+        "size": "350 x 400 мм (базовий)",
+        "finish": "PLA / PETG (Деревна текстура + металік)",
+        "title": {
+            "ua": "Герб Харкова (Ріг Достатку)",
+            "en": "Kharkiv Coat of Arms Shield"
+        },
+        "desc": {
+            "ua": "Ексклюзивне об'ємне настінне панно із зображенням офіційного герба міста Харків. Робота поєднує класичну військову геральдику та сучасні тенденції 3D-декору. Текстурована темно-дерев'яна основа створює глибокий контраст із золотим рогом достатку та срібним кадуцеєм.",
+            "en": "An exclusive 3D wall panel featuring the official coat of arms of Kharkiv. This piece combines classic military heraldry with modern 3D home decor trends. The dark rustic wood-textured shield base creates a deep contrast with the golden cornucopia and the silver caduceus."
+        },
+        "materials": [
+            "matte-black",
+            "silk-gold",
+            "copper"
+        ]
     },
     {
-        id: 'cats-family',
-        category: 'animals',
-        img: '/assets/images/cats_family_3d_close.png',
-        size: '300x300 mm',
-        finish: 'Matte / Silk',
-        title: { ua: 'Сім\'я Котів', en: 'Cat Family' },
-        desc: {
-            ua: 'Затишне настінне панно із зображенням сім\'ї котів, що сплелися хвостами. Уособлює домашнє вогнище та любов.',
-            en: 'Cozy wall panel depicting an intertwined cat family. A symbol of home warmth and love.'
-        }
+        "id": "cats-family",
+        "category": "animals",
+        "img": "/assets/images/cats_family_3d_close.png",
+        "size": "300 x 300 мм",
+        "finish": "PLA (Матовий або шовковий біо-пластик)",
+        "title": {
+            "ua": "Сім'я Котів",
+            "en": "Cat Family"
+        },
+        "desc": {
+            "ua": "Затишне настінне панно із зображенням трьох котів, що сплелися хвостами. Уособлює домашнє вогнище, любов та сімейний затишок. Створено з екологічного біо-пластику.",
+            "en": "Cozy wall panel depicting an intertwined cat family. A perfect symbol of home warmth, love, and care. Made from eco-friendly bio-plastic."
+        },
+        "materials": [
+            "matte-black",
+            "silk-gold",
+            "wood",
+            "copper"
+        ]
     },
     {
-        id: 'bond-wednesday',
-        category: 'gaming',
-        img: '/assets/images/bond_wednesday_vector_close.png',
-        size: '400x200 mm',
-        finish: 'Matte Black',
-        title: { ua: 'Бонд та Венздей', en: 'Bond & Wednesday' },
-        desc: {
-            ua: 'Кінематографічний 3D-кросовер силуетів Агента 007 та Венздей біля Aston Martin. Оптимізований для легкого CAD моделювання.',
-            en: 'Cinematic 3D crossover silhouettes of Agent 007 and Wednesday next to the Aston Martin. Optimized for easy CAD modeling.'
-        }
+        "id": "bond-wednesday",
+        "category": "gaming",
+        "img": "/assets/images/bond_wednesday_vector_close.png",
+        "size": "400 x 200 мм",
+        "finish": "PLA (Матовий чорний лайн-арт)",
+        "title": {
+            "ua": "Бонд та Венздей",
+            "en": "Bond & Wednesday"
+        },
+        "desc": {
+            "ua": "Кінематографічний 3D-кросовер силуетів Агента 007 та Венздей біля Aston Martin. Оптимізований для легкого CAD моделювання, обведення векторів та швидкого друку.",
+            "en": "Cinematic 3D crossover silhouettes of Agent 007 and Wednesday next to the Aston Martin. Specially optimized for easy CAD tracing and fast printing."
+        },
+        "materials": [
+            "matte-black",
+            "silk-gold"
+        ]
     }
-    // --- Add more panels here ---
-    // {
-    //     id: 'lucky-cat',
-    //     category: 'animals',
-    //     img: '/assets/images/lucky_cat.png',
-    //     size: '300x400 mm',
-    //     finish: 'Custom',
-    //     title: { ua: 'Манекі-неко', en: 'Maneki-neko Lucky Cat' },
-    //     desc: { ua: '...', en: '...' }
-    // }
 ];
 
-// Category metadata
 const CATEGORIES = {
     heraldry: {
         slug: 'heraldry',
@@ -69,7 +81,7 @@ const CATEGORIES = {
         icon: '🐱',
         title: { ua: 'Тварини', en: 'Animals & Pets' },
         desc: {
-            ua: 'Котики, собаки та будь-які тварини у об\'ємі.',
+            ua: 'Котики, собаки та будь-які тварини у об'ємі.',
             en: 'Cats, dogs, and any animal brought to life in 3D relief.'
         }
     },
@@ -93,13 +105,34 @@ const CATEGORIES = {
     }
 };
 
-// Resolve root path for assets/links depending on page depth
+const MATERIALS = {
+    'matte-black': {
+        name: { ua: 'Матовий Чорний', en: 'Matte Black' },
+        img: '/assets/images/filament_matte_black.png',
+        color: '#121212'
+    },
+    'silk-gold': {
+        name: { ua: 'Шовкове Золото', en: 'Silk Gold' },
+        img: '/assets/images/filament_silk_gold.png',
+        color: 'linear-gradient(135deg, #e6c27a, #996515)'
+    },
+    'wood': {
+        name: { ua: 'Текстура Дерева', en: 'Wood Fill' },
+        img: '/assets/images/filament_wood.png',
+        color: '#be9b7b'
+    },
+    'copper': {
+        name: { ua: 'Металева Мідь', en: 'Metallic Copper' },
+        img: '/assets/images/filament_copper.png',
+        color: '#b87333'
+    }
+};
+
 function getRootPath() {
-    const depth = window.location.pathname.replace(/^\//, '').split('/').filter(Boolean).length;
+    const depth = window.location.pathname.replace(/^\/|\/$/g, '').split('/').filter(Boolean).length;
     return depth === 0 ? '.' : '../'.repeat(depth);
 }
 
-// Build a single catalog card element
 function buildCard(item, lang) {
     const root = getRootPath();
     const card = document.createElement('article');
@@ -122,7 +155,6 @@ function buildCard(item, lang) {
     return card;
 }
 
-// Render cards into a container, optionally filtered by category
 function renderCatalog(containerId, categoryFilter, lang) {
     const container = document.getElementById(containerId);
     if (!container) return;

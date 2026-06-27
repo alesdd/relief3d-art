@@ -174,6 +174,56 @@ function initLightbox() {
     });
 }
 
+// --- Interactive Product Page Materials Showcase ---
+function initProductPage() {
+    const pathParts = window.location.pathname.replace(/^\/|\/$/g, '').split('/');
+    const prodIndex = pathParts.indexOf('product');
+    if (prodIndex === -1 || prodIndex === pathParts.length - 1) return;
+    const productId = pathParts[prodIndex + 1];
+    
+    const product = CATALOG.find(p => p.id === productId);
+    if (!product || !product.materials) return;
+    
+    const cardMaterials = document.querySelector('.card-materials');
+    if (!cardMaterials) return;
+    
+    const root = getRootPath();
+    const lang = getLang();
+    
+    const row = cardMaterials.querySelector('.materials-row');
+    const img = cardMaterials.querySelector('img');
+    if (!row || !img) return;
+    
+    row.innerHTML = product.materials.map(matKey => {
+        const mat = MATERIALS[matKey];
+        if (!mat) return '';
+        return `
+            <div class="mat-badge" data-material="${matKey}" style="cursor: pointer; transition: all var(--transition);">
+                <div class="mat-dot" style="background: ${mat.color};"></div>
+                <span class="lang-ua">${mat.name.ua}</span>
+                <span class="lang-en">${mat.name.en}</span>
+            </div>
+        `;
+    }).join('');
+    
+    const badges = row.querySelectorAll('.mat-badge');
+    badges.forEach((badge, idx) => {
+        badge.addEventListener('click', () => {
+            badges.forEach(b => b.classList.remove('active'));
+            badge.classList.add('active');
+            const matKey = badge.dataset.material;
+            img.src = root + MATERIALS[matKey].img;
+        });
+        
+        if (idx === 0) {
+            badge.classList.add('active');
+            img.src = root + MATERIALS[badge.dataset.material].img;
+        }
+    });
+    
+    applyLanguage(lang);
+}
+
 document.addEventListener('keydown', e => { 
     if (e.key === 'Escape') {
         closeModal(); 
@@ -185,10 +235,11 @@ document.addEventListener('keydown', e => {
     }
 });
 
-// Apply lang and lightbox on init
+// Apply lang, lightbox and product page init on DOMContentLoaded
 document.addEventListener('DOMContentLoaded', () => {
     applyLanguage(getLang());
     initLightbox();
+    initProductPage();
     
     // Global optimized mouse glow effect for card hover (avoids layout thrashing)
     document.addEventListener('mousemove', e => {
