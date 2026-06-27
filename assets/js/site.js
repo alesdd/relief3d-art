@@ -127,8 +127,8 @@ function openModal(item, lang) {
                     <span>📐 ${item.size}</span>
                     <span>🎨 ${item.finish}</span>
                 </div>
-                <a href="#" class="order-btn" onclick="alert('${currentLang === 'ua' ? 'Форма замовлення незабаром!' : 'Order form coming soon!'}'); return false;">
-                    ${currentLang === 'ua' ? 'Зробити замовлення' : 'Place an Order'}
+                <a href="${root}/product/${item.id}/index.html" class="order-btn">
+                    ${currentLang === 'ua' ? 'Детальніше' : 'View Details'}
                 </a>
             </div>
         </div>
