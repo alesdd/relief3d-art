@@ -63,6 +63,15 @@
     object-fit: cover;
 }
 
+img.zoomable {
+    cursor: zoom-in;
+    transition: transform 0.5s ease;
+}
+
+img.zoomable:hover {
+    transform: scale(1.05);
+}
+
 /* Text handling */
 .bento-content {
     padding: 32px;

@@ -143,7 +143,50 @@ function closeModal() {
     document.body.style.overflow = '';
 }
 
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+// --- Lightbox for Zoomable Images ---
+function openLightbox(src) {
+    let lb = document.getElementById('lightbox-modal');
+    if (!lb) {
+        lb = document.createElement('div');
+        lb.id = 'lightbox-modal';
+        lb.className = 'lightbox-modal';
+        lb.innerHTML = `
+            <button class="lightbox-close">✕</button>
+            <img src="" alt="Zoomed Image">
+        `;
+        document.body.appendChild(lb);
+        
+        lb.addEventListener('click', (e) => {
+            if (e.target === lb || e.target.classList.contains('lightbox-close')) {
+                lb.classList.remove('show');
+                document.body.style.overflow = '';
+            }
+        });
+    }
+    lb.querySelector('img').src = src;
+    lb.classList.add('show');
+    document.body.style.overflow = 'hidden';
+}
 
-// Apply lang on init
-document.addEventListener('DOMContentLoaded', () => applyLanguage(getLang()));
+function initLightbox() {
+    document.querySelectorAll('img.zoomable').forEach(img => {
+        img.addEventListener('click', () => openLightbox(img.src));
+    });
+}
+
+document.addEventListener('keydown', e => { 
+    if (e.key === 'Escape') {
+        closeModal(); 
+        const lb = document.getElementById('lightbox-modal');
+        if (lb && lb.classList.contains('show')) {
+            lb.classList.remove('show');
+            document.body.style.overflow = '';
+        }
+    }
+});
+
+// Apply lang and lightbox on init
+document.addEventListener('DOMContentLoaded', () => {
+    applyLanguage(getLang());
+    initLightbox();
+});
