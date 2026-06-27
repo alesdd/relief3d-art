@@ -71,32 +71,8 @@
             letter-spacing: 1px;
         }
 
-        .hero {
-            min-height: 70vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 4rem 1rem;
-            position: relative;
-        }
-
-        .hero h1 {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
-            font-weight: 800;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #fff 0%, #a0a0a0 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            line-height: 1.2;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            color: var(--text-muted);
-            max-width: 600px;
-            margin-bottom: 2rem;
+        .header-spacer {
+            padding-top: 2rem;
         }
 
         .portfolio-grid {
@@ -363,13 +339,7 @@
         </nav>
     </header>
 
-    <section class="hero">
-        <h1 class="lang-ua">Мистецтво у 3D</h1>
-        <h1 class="lang-en" style="font-family: 'Playfair Display', serif; color: var(--accent-gold);">Art in 3D</h1>
-        
-        <p class="lang-ua">Ексклюзивні настінні панно. Поєднання класичної геральдики, сучасного дизайну та передових технологій 3D-друку.</p>
-        <p class="lang-en">Exclusive wall panels. A blend of classical heraldry, modern design, and advanced 3D printing technology.</p>
-    </section>
+    <div class="header-spacer"></div>
 
     <main class="portfolio-grid">
         <!-- Panel 1 -->
@@ -401,12 +371,16 @@
             <button class="lang-btn" onclick="setLanguage('en')" id="btn-footer-en">EN</button>
         </div>
         <div class="footer-text lang-ua">
-            Ми створюємо унікальні об'ємні настінні панно, герби та барельєфи на замовлення. 
+            <h2 style="color: var(--text-main); margin-bottom: 0.5rem; font-size: 1.5rem;">Мистецтво у 3D</h2>
+            Ексклюзивні настінні панно. Поєднання класичної геральдики, сучасного дизайну та передових технологій 3D-друку.<br><br>
+            Ми створюємо унікальні об'ємні герби та барельєфи на замовлення. 
             Кожен виріб розробляється з індивідуальним підходом та виготовляється за допомогою сучасних технологій.
         </div>
         <div class="footer-text lang-en">
-            We create unique 3D wall panels, coats of arms, and bas-reliefs on demand. 
-            Each piece is custom-designed and manufactured using modern 3D technology.
+            <h2 style="font-family: 'Playfair Display', serif; color: var(--accent-gold); margin-bottom: 0.5rem; font-size: 1.5rem;">Art in 3D</h2>
+            Exclusive wall panels. A blend of classical heraldry, modern design, and advanced 3D printing technology.<br><br>
+            We create unique 3D coats of arms and bas-reliefs on demand. 
+            Each piece is custom-designed and manufactured using modern technology.
         </div>
         <p>&copy; 2026 Relief3D.Art.</p>
     </footer>
