@@ -1,179 +1,186 @@
 /* ==============================================
-   Relief3D — Deep Product Page Styles (product.css)
+   Relief3D — Bento Product Page Styles
    ============================================== */
 
 .product-page {
-    width: 100%;
+    padding: 90px 16px 40px; /* Space for fixed header */
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
-.prod-section {
-    min-height: 100vh;
+.bento-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+/* Desktop Grid layout */
+@media (min-width: 1024px) {
+    .bento-grid {
+        grid-template-columns: repeat(12, 1fr);
+    }
+    .card-hero { grid-column: span 12; flex-direction: row !important; height: 500px; }
+    .card-specs { grid-column: span 4; }
+    .card-loft { grid-column: span 8; height: 400px; }
+    .card-materials { grid-column: span 6; }
+    .card-office { grid-column: span 6; height: 400px; }
+    .card-seo { grid-column: span 12; }
+    .card-cta { grid-column: span 12; }
+}
+
+/* Bento Card Base */
+.bento-card {
+    background: var(--bg-surface);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 28px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: border-color var(--transition);
+}
+
+.bento-card:hover {
+    border-color: rgba(255,255,255,0.2);
+}
+
+/* Image handling */
+.bento-img-wrapper {
+    flex: 1;
+    min-height: 250px;
+    position: relative;
+    overflow: hidden;
+}
+
+.bento-img-wrapper img {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+}
+
+/* Text handling */
+.bento-content {
+    padding: 32px;
+    text-align: left;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    position: relative;
-    padding: 100px 5%;
 }
 
-.prod-hero {
-    overflow: hidden;
-    color: #fff;
-}
-
-.prod-bg {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background-size: cover;
-    background-position: center;
-    z-index: -2;
-}
-
-.prod-hero::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.8) 100%);
-    z-index: -1;
-}
-
-.center {
-    text-align: center;
-    align-items: center;
-}
-
-.prod-content {
-    max-width: 800px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.prod-title {
-    font-size: clamp(3rem, 8vw, 5rem);
-    font-weight: 900;
-    line-height: 1.1;
-    letter-spacing: -0.03em;
-}
-
-.prod-subtitle {
-    font-size: 1.2rem;
-    color: rgba(255,255,255,0.8);
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.scroll-indicator {
-    margin-top: 4rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    opacity: 0.6;
-    animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-    40% { transform: translateY(-10px); }
-    60% { transform: translateY(-5px); }
-}
-
-/* Split sections (Text + Image) */
-.prod-split {
-    display: flex;
-    flex-direction: column;
-    gap: 4rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
-}
-
-@media (min-width: 900px) {
-    .prod-split {
-        flex-direction: row;
-        align-items: center;
-    }
-    .prod-split.reverse {
-        flex-direction: row-reverse;
-    }
-    .prod-text, .prod-image {
-        flex: 1;
-    }
-}
-
-.prod-text h2 {
-    font-size: clamp(2rem, 4vw, 3.5rem);
+.bento-content h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 800;
-    margin-bottom: 1.5rem;
-    line-height: 1.2;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
 }
 
-.prod-text p {
-    font-size: 1.1rem;
+.bento-content h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.bento-content p {
     color: var(--text-secondary);
-    line-height: 1.8;
-    margin-bottom: 2rem;
-}
-
-.prod-image img {
-    width: 100%;
-    border-radius: var(--radius);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-}
-
-/* Materials showcase */
-.materials-showcase {
-    display: flex;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-}
-
-.mat-card {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    background: rgba(255,255,255,0.05);
-    padding: 12px 20px;
-    border-radius: 12px;
-    border: 1px solid var(--border);
-}
-
-.mat-circle {
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    border: 1px solid rgba(255,255,255,0.2);
-    box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
-}
-
-/* CTA Section */
-.prod-cta {
-    background: var(--bg-surface-2);
-    min-height: 60vh;
-}
-
-.prod-cta h2 {
-    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.6;
+    font-size: 1.05rem;
     margin-bottom: 1rem;
 }
 
+.bento-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Hero specifics */
+.card-hero .bento-content {
+    flex: 1;
+    background: var(--bg-surface-2);
+}
+
+.card-hero .breadcrumbs {
+    margin-bottom: 1rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    display: flex;
+    gap: 8px;
+}
+
+.card-hero .breadcrumbs a { color: var(--text-primary); }
+
+/* Materials showcase */
+.materials-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.mat-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.9rem;
+}
+
+.mat-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+/* SEO FAQ block */
+.seo-grid {
+    display: grid;
+    gap: 32px;
+}
+
+@media (min-width: 768px) {
+    .seo-grid { grid-template-columns: 1fr 1fr 1fr; }
+}
+
+.seo-item h3 {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+/* CTA */
 .btn-primary {
     display: inline-block;
     background: #fff;
     color: #000;
     padding: 16px 32px;
-    border-radius: 12px;
+    border-radius: 100px;
     font-weight: 700;
     font-size: 1.1rem;
-    margin-top: 2rem;
-    transition: transform var(--transition);
+    text-align: center;
+    margin-top: 1rem;
+    width: fit-content;
+    transition: transform 0.2s, background 0.2s;
 }
 
 .btn-primary:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 20px rgba(255,255,255,0.1);
+    transform: scale(1.05);
+    background: #f0f0f0;
+}
+
+.card-cta .bento-content {
+    align-items: center;
+    text-align: center;
+    padding: 64px 24px;
+}
+
+/* Mobile specific fixes to ensure no jumping */
+@media (max-width: 1023px) {
+    .bento-card { border-radius: 20px; }
+    .bento-content { padding: 24px; text-align: left; }
+    .btn-primary { width: 100%; }
 }

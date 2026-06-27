@@ -43,108 +43,120 @@
     <header class="site-header" id="site-header"></header>
 
     <main class="product-page">
-        <!-- Screen 1: Hero (Macro Texture) -->
-        <section class="prod-section prod-hero">
-            <div class="prod-bg" style="background-image: url('../../assets/images/kharkiv_3d_close.png');"></div>
-            <div class="prod-content center">
-                <div class="breadcrumbs">
-                    <a href="../../index.html"><span class="lang-ua">Головна</span><span class="lang-en">Home</span></a>
-                    <span class="sep">/</span>
-                    <a href="../../catalog/index.html"><span class="lang-ua">Каталог</span><span class="lang-en">Catalog</span></a>
-                    <span class="sep">/</span>
-                    <a href="../../category/heraldry/index.html"><span class="lang-ua">Геральдика</span><span class="lang-en">Heraldry</span></a>
-                </div>
-                <h1 class="prod-title"><span class="lang-ua">Герб Харкова</span><span class="lang-en">Kharkiv Coat of Arms</span></h1>
-                <p class="prod-subtitle">
-                    <span class="lang-ua">Деталізоване настінне панно. Ріг достатку та кадуцей.</span>
-                    <span class="lang-en">Detailed wall panel featuring cornucopia and caduceus.</span>
-                </p>
-                <div class="scroll-indicator">
-                    <span class="lang-ua">Гортайте вниз</span><span class="lang-en">Scroll down</span>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                </div>
-            </div>
-        </section>
-
-        <!-- Screen 2: Lifestyle Mockups -->
-        <section class="prod-section">
-            <div class="prod-split">
-                <div class="prod-text">
-                    <h2><span class="lang-ua">Сучасний Лофт та Кабінет</span><span class="lang-en">Modern Loft & Executive Office</span></h2>
+        <div class="bento-grid">
+            
+            <!-- Hero Card -->
+            <div class="bento-card card-hero">
+                <div class="bento-content">
+                    <div class="breadcrumbs">
+                        <a href="../../index.html"><span class="lang-ua">Головна</span><span class="lang-en">Home</span></a> /
+                        <a href="../../catalog/index.html"><span class="lang-ua">Каталог</span><span class="lang-en">Catalog</span></a> /
+                        <a href="../../category/heraldry/index.html"><span class="lang-ua">Геральдика</span><span class="lang-en">Heraldry</span></a>
+                    </div>
+                    <h1><span class="lang-ua">Герб Харкова</span><span class="lang-en">Kharkiv Coat of Arms</span></h1>
                     <p>
-                        <span class="lang-ua">Розмір виробу: 350x400 мм. Ідеально підходить для кабінету керівника, лофту або сучасної вітальні. Чорна матова текстура створює преміальний акцент на цегляній або темній стіні.</span>
-                        <span class="lang-en">Dimensions: 350x400 mm. Perfectly suited for an executive office, loft, or modern living room. The matte black texture creates a premium focal point on brick or dark walls.</span>
+                        <span class="lang-ua">Деталізоване настінне панно із зображенням історичного герба. Ріг достатку та кадуцей, відтворені у преміальному об'ємному стилі FDM-друку.</span>
+                        <span class="lang-en">Detailed wall panel featuring the historical coat of arms. Cornucopia and caduceus recreated in a premium volumetric FDM print style.</span>
                     </p>
                 </div>
-                <div class="prod-image" style="display: flex; flex-direction: column; gap: 1rem;">
-                    <img src="../../assets/images/kharkiv_loft_mockup.png" alt="Loft Interior Mockup">
-                    <img src="../../assets/images/kharkiv_office_mockup.png" alt="Office Mockup">
+                <div class="bento-img-wrapper">
+                    <img src="../../assets/images/kharkiv_3d_close.png" alt="Macro Texture">
                 </div>
             </div>
-        </section>
 
-        <!-- Screen 3: Materials Showcase -->
-        <section class="prod-section">
-            <div class="prod-split reverse">
-                <div class="prod-text">
-                    <h2><span class="lang-ua">Палітра Філаментів</span><span class="lang-en">Filament Palette</span></h2>
+            <!-- Specifications Card -->
+            <div class="bento-card card-specs">
+                <div class="bento-content">
+                    <h2><span class="lang-ua">Характеристики</span><span class="lang-en">Specifications</span></h2>
+                    <p><strong><span class="lang-ua">Розмір:</span><span class="lang-en">Size:</span></strong> 350x400 mm</p>
+                    <p><strong><span class="lang-ua">Технологія:</span><span class="lang-en">Tech:</span></strong> Fused Deposition Modeling</p>
+                    <p><strong><span class="lang-ua">Екологічність:</span><span class="lang-en">Eco:</span></strong> 100% Bio-PLA</p>
+                </div>
+            </div>
+
+            <!-- Loft Mockup Card -->
+            <div class="bento-card card-loft">
+                <div class="bento-img-wrapper">
+                    <img src="../../assets/images/kharkiv_loft_mockup.png" alt="Loft Interior">
+                </div>
+            </div>
+
+            <!-- Materials Card -->
+            <div class="bento-card card-materials">
+                <div class="bento-content">
+                    <h2><span class="lang-ua">Палітра Матеріалів</span><span class="lang-en">Material Palette</span></h2>
                     <p>
-                        <span class="lang-ua">Ми використовуємо лише високоякісний європейський пластик. Ви можете обрати класичний матовий чорний, який поглинає світло і підкреслює форму, або глянцеве шовкове золото, що сяє як справжній метал.</span>
-                        <span class="lang-en">We use only high-quality European plastic. Choose between classic matte black, which absorbs light to emphasize form, or shiny silk gold that gleams like real metal.</span>
+                        <span class="lang-ua">Обирайте між класичним матовим поглинанням світла та преміальним глянцевим блиском.</span>
+                        <span class="lang-en">Choose between classic matte light absorption and premium silk gloss.</span>
                     </p>
-                    <div class="materials-showcase">
-                        <div class="mat-card">
-                            <div class="mat-circle" style="background: #1a1a1a;"></div>
-                            <span><span class="lang-ua">Матовий Чорний</span><span class="lang-en">Matte Black</span></span>
+                    <div class="materials-row">
+                        <div class="mat-badge">
+                            <div class="mat-dot" style="background: #1a1a1a;"></div>
+                            <span class="lang-ua">Матовий Чорний</span><span class="lang-en">Matte Black</span>
                         </div>
-                        <div class="mat-card">
-                            <div class="mat-circle" style="background: linear-gradient(135deg, #e6c27a 0%, #d4af37 50%, #996515 100%);"></div>
-                            <span><span class="lang-ua">Глянцеве Золото</span><span class="lang-en">Silk Gold</span></span>
+                        <div class="mat-badge">
+                            <div class="mat-dot" style="background: linear-gradient(135deg, #e6c27a, #996515);"></div>
+                            <span class="lang-ua">Шовкове Золото</span><span class="lang-en">Silk Gold</span>
                         </div>
                     </div>
                 </div>
-                <div class="prod-image">
-                    <img src="../../assets/images/filament_spools.png" alt="3D Printing Filament Spools">
+                <div class="bento-img-wrapper" style="min-height: 150px;">
+                    <img src="../../assets/images/filament_spools.png" alt="Filaments">
                 </div>
             </div>
-        </section>
 
-        <!-- Screen 3.5: AI-SEO Content Deep Dive -->
-        <section class="prod-section">
-            <div class="prod-content" style="max-width: 900px; margin: 0 auto; background: rgba(255,255,255,0.03); padding: 3rem; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1);">
-                <h2 style="font-size: 2.5rem; margin-bottom: 2rem;"><span class="lang-ua">Технологія & Деталі (AIO FAQ)</span><span class="lang-en">Technology & Details (AIO FAQ)</span></h2>
-                
-                <h3 style="color: var(--accent); margin-bottom: 0.5rem;"><span class="lang-ua">Що таке FDM 3D-друк панно?</span><span class="lang-en">What is FDM 3D printed wall art?</span></h3>
-                <p style="margin-bottom: 1.5rem; color: var(--text-secondary); line-height: 1.6;">
-                    <span class="lang-ua">Наші вироби створюються методом пошарового наплавлення (Fused Deposition Modeling). Ми перетворюємо цифрову 3D-модель герба на фізичний об'єкт, шар за шаром накладаючи розплавлений еко-пластик (PLA). Це дає унікальну горизонтальну текстуру, яку неможливо отримати при литті чи фрезеруванні.</span>
-                    <span class="lang-en">Our items are created using Fused Deposition Modeling. We turn a digital 3D model of the coat of arms into a physical object by layering melted eco-plastic (PLA). This creates a unique horizontal layer texture impossible to achieve with casting or milling.</span>
-                </p>
-
-                <h3 style="color: var(--accent); margin-bottom: 0.5rem;"><span class="lang-ua">Чому герб Харкова (Ріг достатку та Кадуцей)?</span><span class="lang-en">Why the Kharkiv coat of arms?</span></h3>
-                <p style="margin-bottom: 1.5rem; color: var(--text-secondary); line-height: 1.6;">
-                    <span class="lang-ua">Це історичний символ міста. Зелений щит перехрещений рогом достатку (символізує природні багатства) та кадуцеєм — жезлом бога торгівлі Меркурія. Ми відтворили цю класичну геральдику у надсучасному об'ємному стилі для поціновувачів історії та сучасного дизайну.</span>
-                    <span class="lang-en">It is the historical symbol of the city. A shield crossed by a cornucopia (symbolizing natural wealth) and a caduceus — the staff of Mercury, god of trade. We recreated this classic heraldry in an ultra-modern 3D style for lovers of history and modern design.</span>
-                </p>
-
-                <h3 style="color: var(--accent); margin-bottom: 0.5rem;"><span class="lang-ua">Як доглядати за панно?</span><span class="lang-en">How to care for the panel?</span></h3>
-                <p style="margin-bottom: 1.5rem; color: var(--text-secondary); line-height: 1.6;">
-                    <span class="lang-ua">PLA пластик дуже довговічний у приміщенні. Достатньо протирати його від пилу м'якою щіткою або сухою ганчіркою. Уникайте прямого впливу температур вище 60°C (не вішайте впритул до камінів чи обігрівачів).</span>
-                    <span class="lang-en">PLA plastic is very durable indoors. Simply dust it with a soft brush or dry cloth. Avoid direct exposure to temperatures above 60°C (do not hang directly next to fireplaces or heaters).</span>
-                </p>
+            <!-- Office Mockup Card -->
+            <div class="bento-card card-office">
+                <div class="bento-img-wrapper">
+                    <img src="../../assets/images/kharkiv_office_mockup.png" alt="Office Interior">
+                </div>
             </div>
-        </section>
 
-        <!-- Screen 4: Call to Action -->
-        <section class="prod-section prod-cta center">
-            <h2><span class="lang-ua">Готові замовити?</span><span class="lang-en">Ready to order?</span></h2>
-            <p>
-                <span class="lang-ua">Зв'яжіться з нами для узгодження кольору та деталей доставки.</span>
-                <span class="lang-en">Contact us to confirm color and shipping details.</span>
-            </p>
-            <a href="#" class="btn-primary">
-                <span class="lang-ua">Зв'язатися в Telegram</span><span class="lang-en">Contact via Telegram</span>
-            </a>
-        </section>
+            <!-- SEO & FAQ Card -->
+            <div class="bento-card card-seo">
+                <div class="bento-content">
+                    <h2 style="font-size: 2rem; margin-bottom: 24px;"><span class="lang-ua">Детальніше про виріб (FAQ)</span><span class="lang-en">Product Details (FAQ)</span></h2>
+                    <div class="seo-grid">
+                        <div class="seo-item">
+                            <h3><span class="lang-ua">Що таке FDM друк?</span><span class="lang-en">What is FDM printing?</span></h3>
+                            <p>
+                                <span class="lang-ua">Це пошарове наплавлення еко-пластику. Створює унікальну горизонтальну текстуру, що підкреслює об'єм.</span>
+                                <span class="lang-en">Layered eco-plastic melting. Creates a unique horizontal texture that emphasizes volume.</span>
+                            </p>
+                        </div>
+                        <div class="seo-item">
+                            <h3><span class="lang-ua">Символізм</span><span class="lang-en">Symbolism</span></h3>
+                            <p>
+                                <span class="lang-ua">Ріг достатку символізує природні багатства, а кадуцей — торгівлю. Класика у сучасному стилі.</span>
+                                <span class="lang-en">The cornucopia symbolizes natural wealth, and the caduceus represents trade. A modern take on a classic.</span>
+                            </p>
+                        </div>
+                        <div class="seo-item">
+                            <h3><span class="lang-ua">Догляд</span><span class="lang-en">Care Instructions</span></h3>
+                            <p>
+                                <span class="lang-ua">Пластик довговічний. Просто протирайте пил сухою щіткою. Уникайте прямого нагріву вище 60°C.</span>
+                                <span class="lang-en">Highly durable. Simply dust with a dry brush. Avoid direct heat above 60°C.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Card -->
+            <div class="bento-card card-cta">
+                <div class="bento-content">
+                    <h2><span class="lang-ua">Готові замовити ексклюзив?</span><span class="lang-en">Ready to order?</span></h2>
+                    <p>
+                        <span class="lang-ua">Зв'яжіться для обговорення кольору, розмірів та доставки.</span>
+                        <span class="lang-en">Contact us to discuss color, sizing, and shipping.</span>
+                    </p>
+                    <a href="#" class="btn-primary">
+                        <span class="lang-ua">Зв'язатися в Telegram</span><span class="lang-en">Contact via Telegram</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
     </main>
 
     <footer class="site-footer">
