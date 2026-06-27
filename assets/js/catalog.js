@@ -61,7 +61,14 @@ const CATALOG = [
         },
         "materials": [
             "matte-black",
-            "silk-gold"
+            "silk-gold",
+            "silk-silver",
+            "silk-bronze",
+            "copper",
+            "matte-navy",
+            "matte-red",
+            "matte-green",
+            "matte-purple"
         ]
     }
 ];
@@ -116,15 +123,45 @@ const MATERIALS = {
         img: '/assets/images/filament_silk_gold.png',
         color: 'linear-gradient(135deg, #e6c27a, #996515)'
     },
-    'wood': {
-        name: { ua: 'Текстура Дерева', en: 'Wood Fill' },
-        img: '/assets/images/filament_wood.png',
-        color: '#be9b7b'
+    'silk-silver': {
+        name: { ua: 'Шовкове Срібло', en: 'Silk Silver' },
+        img: '/assets/images/filament_silk_silver.png',
+        color: 'linear-gradient(135deg, #e5e5e5, #999999)'
+    },
+    'silk-bronze': {
+        name: { ua: 'Шовкова Бронза', en: 'Silk Bronze' },
+        img: '/assets/images/filament_silk_bronze.png',
+        color: 'linear-gradient(135deg, #cd7f32, #8b4513)'
     },
     'copper': {
         name: { ua: 'Металева Мідь', en: 'Metallic Copper' },
         img: '/assets/images/filament_copper.png',
         color: '#b87333'
+    },
+    'wood': {
+        name: { ua: 'Текстура Дерева', en: 'Wood Fill' },
+        img: '/assets/images/filament_wood.png',
+        color: '#be9b7b'
+    },
+    'matte-navy': {
+        name: { ua: 'Матовий Синій', en: 'Matte Navy' },
+        img: '/assets/images/filament_navy_blue.png',
+        color: '#1b2c4a'
+    },
+    'matte-red': {
+        name: { ua: 'Матовий Червоний', en: 'Matte Red' },
+        img: '/assets/images/filament_spools.png',
+        color: '#a31d1d'
+    },
+    'matte-green': {
+        name: { ua: 'Матовий Зелений', en: 'Matte Green' },
+        img: '/assets/images/filament_spools.png',
+        color: '#1d5a1d'
+    },
+    'matte-purple': {
+        name: { ua: 'Матовий Пурпурний', en: 'Matte Purple' },
+        img: '/assets/images/filament_spools.png',
+        color: '#4a154b'
     }
 };
 
