@@ -135,12 +135,12 @@ img.zoomable:hover {
 .mat-badge {
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 8px 16px;
-    border-radius: 20px;
+    gap: 10px;
+    padding: 12px 20px;
+    border-radius: 24px;
     background: rgba(255,255,255,0.05);
     border: 1px solid rgba(255,255,255,0.1);
-    font-size: 0.9rem;
+    font-size: 0.95rem;
 }
 
 .mat-badge.active {
@@ -244,7 +244,7 @@ img.zoomable:hover {
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(255,255,255,0.1);
     color: #fff;
-    width: 40px; height: 40px;
+    width: 48px; height: 48px;
     border-radius: 50%;
     cursor: pointer;
     display: flex; align-items: center; justify-content: center;
@@ -272,7 +272,8 @@ img.zoomable:hover {
 }
 
 .carousel-dots .dot {
-    width: 8px; height: 8px;
+    width: 10px; height: 10px;
+    margin: 8px; /* Adds invisible clickable area */
     border-radius: 50%;
     background: rgba(255,255,255,0.4);
     cursor: pointer;
