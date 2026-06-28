@@ -88,7 +88,7 @@ const CATEGORIES = {
         icon: '🐱',
         title: { ua: 'Тварини', en: 'Animals & Pets' },
         desc: {
-            ua: 'Котики, собаки та будь-які тварини у об'ємі.',
+            ua: "Котики, собаки та будь-які тварини у об'ємі.",
             en: 'Cats, dogs, and any animal brought to life in 3D relief.'
         }
     },
