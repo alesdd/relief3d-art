@@ -165,7 +165,7 @@ const MATERIALS = {
     },
     'matte-white': {
         name: { ua: 'Матовий Білий (Overture Matte PLA)', en: 'Matte White (Overture PLA)' },
-        img: '/assets/images/filament_spools.png',
+        img: '/assets/images/filament_matte_pla_1.png',
         color: '#f5f5f5'
     }
 };
