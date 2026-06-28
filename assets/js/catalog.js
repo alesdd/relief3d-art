@@ -162,6 +162,11 @@ const MATERIALS = {
         name: { ua: 'Матовий Пурпурний', en: 'Matte Purple' },
         img: '/assets/images/filament_spools.png',
         color: '#4a154b'
+    },
+    'matte-white': {
+        name: { ua: 'Матовий Білий (Overture Matte PLA)', en: 'Matte White (Overture PLA)' },
+        img: '/assets/images/filament_spools.png',
+        color: '#f5f5f5'
     }
 };
 
